@@ -6,49 +6,49 @@
 	<meta name="description" content="Simple Example of Behance API">
 	<meta name="author" content="Adrian Hanft">
 
-	<title>Simple Example of Behance API Template</title>
+	<title>Behance API Test</title>
 
   <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <style type="text/css" media="screen">
-  body {
-    margin: 0;
-    font-family: 'Vollkorn', serif;
-    color: #666;
-  }
-  a {
-    color: #666;
-  }
-  li {
-    list-style-type: none;
-  }
-  li, h1 {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-  }
-  #header {
-    float: left;
-    width: 100%;
-    background-color: #ccc;
-  }
-  #left-column {
-    float: left;
-    width: 33%;
-  }
-  #right-column {
-    float: right;
-    background-color: #efefef;
-    width: 66%;
-  }
-  .projects, .modules {
-    padding:0 25px 0 25px;
-  }
-  .module-description, .module-title {
-    padding: 0 0 0 25px;
-  }
-  #left-column h1, #header h1  {
-    padding: 10px 25px;
-  }
+    body {
+      margin: 0;
+      font-family: 'Vollkorn', serif;
+      color: #666;
+    }
+    a {
+      color: #666;
+    }
+    li {
+      list-style-type: none;
+    }
+    li, h1 {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+    #header {
+      float: left;
+      width: 100%;
+      background-color: #ccc;
+    }
+    #left-column {
+      float: left;
+      width: 33%;
+    }
+    #right-column {
+      float: right;
+      background-color: #efefef;
+      width: 66%;
+    }
+    .projects, .modules {
+      padding:0 25px 0 25px;
+    }
+    .module-description, .module-title {
+      padding: 0 0 0 25px;
+    }
+    #left-column h1, #header h1  {
+      padding: 10px 25px;
+    }
   </style>
 
 </head>
@@ -77,7 +77,7 @@
   <script src="js/behance.js"></script>
 
   <script type="text/javascript">
-  var username = "adrian3";
+  var username = "princesyed";
 
   function loadProject(projectID) {
    behanceAPI.getProjectDetails(projectID, function(loadModules) {
@@ -105,7 +105,7 @@
 	behanceAPI.setKey(behancekey);
 	
 	// Get projects
-	behanceAPI.getProjects("adrian3", function(projectlist) {
+	behanceAPI.getProjects(username, function(projectlist) {
 		var projectHTML = "";
 		for(var i=0; i<projectlist.length; i++) {
 			var project = projectlist[i];

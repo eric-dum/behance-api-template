@@ -1,4 +1,4 @@
-var behancekey = "PutYourKeyHere";
+var behancekey = "HefK92F1d56tkSx7QBBoYAKvE53TsXPC";
 
 var behanceAPI = function() {
 	var key;
