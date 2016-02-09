@@ -29,7 +29,7 @@ $(document).ready(function() {
     behanceAPI.setKey(behancekey);
     
     // Get projects
-    behanceAPI.getProjects("adrian3", function(projectlist) {
+    behanceAPI.getProjects(user, function(projectlist) {
 
         //console.dir(projectlist);
         
