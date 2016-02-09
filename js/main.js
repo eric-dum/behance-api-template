@@ -45,7 +45,7 @@ $(document).ready(function() {
                 imgSrc = project.covers[404];
             }
             
-            projectHTML += "<a href='#' class='col-lg-3 col-md-3 col-sm-4 col-xs-6' title='"+ project.name +"' onclick='loadProject(" + project.id + ")'><img class='coverimage' src='" + imgSrc + "' class='col-lg-3'></a>";
+            projectHTML +=  " <div class='col-lg-4 col-md-4 col-sm-4 col-xs-6 single-projects'> <h3> "+ project.name +"</h3> <a href='#'  title='"+ project.name +"' onclick='loadProject(" + project.id + ")'><img class='coverimage' src='" + imgSrc + "' class='col-lg-4'></a> </div>";
         }
 
         projectHTML += "<div class='clearfix'></div>";
