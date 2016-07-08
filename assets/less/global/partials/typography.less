@@ -1,50 +1,23 @@
 //TYPUGRAPHY.LESS
 
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 body {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
-.small,
-.small a {
- 	color: #999;
- 	font-size: 11px;
-}
+.overlay {
+	text-decoration: none;
+	text-align: center;
+	color: white;
 
-h1 {
- 	font-size: 48px;
-}
+	//override bootstrap default styling
+	&:hover, &:focus {
+		text-decoration: none;
+		color: white;
+	}
 
-h2 {
- 	font-size: 30px;
-}
-
-h3 {
- font-size: 24px;
- margin: 15px 0 5px 0;
-}
-
-p {
- 	font-size: 16px;
-}
-
-li {
- 	font-size: 16px;
-}
-
-.widget-title {
- 	display: none;
-}
-
-a {
-  transition: all .35s ease-in-out;
-}
-
-
-#projects h3 {
- font-size: 24px;
- background: rgb(220, 87, 39);
- padding: 16px 2px;
- text-align: center;
- color: #fff;
- margin: 0px;
+	.project-title {
+		font-size: 18px;
+	}
 }
