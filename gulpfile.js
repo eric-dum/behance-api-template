@@ -12,8 +12,9 @@ var concat = require('gulp-concat');
 
 //Styling
 var less = require('gulp-less');
-var sourceMap = require('gulp-sourcemaps');
-var lesswatch = require('gulp-watch-less');
+var sourcemap = require('gulp-sourcemaps');
+var LessAutoprefix = require('less-plugin-autoprefix');
+var autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
 var rename = require('gulp-rename');
 
@@ -46,9 +47,8 @@ gulp.task('browser-sync', function() {
 //Compile all less files into main less file and output minified css
 gulp.task('less-main', function() {
   return gulp.src([
-    'assets/vendor/bootstrap-3.3.6/less/bootstrap.less',
-
     //ADD VENDOR STYLESHEETS HERE
+    'assets/vendor/bootstrap-3.3.6/less/bootstrap.less',
     'assets/vendor/font-awesome-4.6.3/less/font-awesome.less',
 
     //MAIN GLOBAL STYLESHEET
@@ -57,12 +57,15 @@ gulp.task('less-main', function() {
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe(sourceMap.init())
-    .pipe(less( {compress : true} ))
+    .pipe(sourcemap.init())
+    .pipe(less({
+      plugins: [autoprefix],
+      compress : true
+    }))
     .pipe(concat('theme.min.css'))
-    .pipe(sourceMap.write('maps/'))
+    .pipe(sourcemap.write('./maps/'))
     .pipe(gulp.dest('assets/less/global/'))
-    .pipe(filesize())
+    //.pipe(filesize())
     .pipe(browserSync.stream())
     .on('error', gutil.log);
 });
@@ -123,7 +126,7 @@ gulp.task('watch', function() {
   gulp.watch('*.html', ['bs-reload']);
   gulp.watch('assets/less/global/**/*.less', ['less-main']);
   gulp.watch('assets/less/**/*.less', ['less-inner']);
-  gulp.watch('assets/js/*.js', ['scripts']);
+  gulp.watch('assets/js/global/*.js', ['scripts']);
 });
 
 //Build Task

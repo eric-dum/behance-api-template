@@ -1,5 +1,5 @@
 var behancekey = "HefK92F1d56tkSx7QBBoYAKvE53TsXPC";
-var user = "princesyed";
+var user = "pawel_skupien";
 
 var behanceAPI = function() {
 	var key;
