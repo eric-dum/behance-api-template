@@ -50,11 +50,13 @@ $(document).ready(function() {
             }
 
             projectHTML +=
-                " <div class='col-lg-2 col-md-4 col-sm-4 col-xs-6 single-projects'>
+                " <div class='col-lg-3 col-md-4 col-sm-4 col-xs-6 single-projects'>
                     <a class='overlay' href='#'  title='"+ project.name +"' onclick='loadProject(" + project.id + ")'>
-                        <h3 class='project-title'> "+ project.name +"</h3>
-                        <hr>
-                        <h4 class='project-stats'>View Project</h4>
+                        <span class='overlay-contain'>
+                            <h3 class='project-title'> "+ project.name +"</h3>
+                            <hr>
+                           <h4 class='project-stats'>View Project</h4>
+                        </span>
                     </a>
                     <img class='coverimage' src='" + imgSrc + "' alt='" + project.name + "'>
                 </div>";
